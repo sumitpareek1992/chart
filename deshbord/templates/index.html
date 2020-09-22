@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+ <style type="text/css">
+ .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;}
+ .h3{
+    text-align: center;
+  }
+  </style>
+
+  <div class="container">
+    <div class="jumbotron">
+
+
+
+<form enctype="multipart/form-data" method="POST" class="form-signin">
+    <h2 class="h3 mb-3 font-weight-normal">Register Here</h2>
+          {% csrf_token %}
+     <input type="text" name="name" class="form-control" placeholder="Name" required="true">
+      <input name="population"class="form-control" placeholder="Population" type="text" required="true">
+    <input name="male"class="form-control" placeholder="Male" type="text" required="true"><br>
+    <input name="female"class="form-control" placeholder="Female" type="text" required="true"><br>
+    <input name="other"class="form-control" placeholder="Other" type="text" required="true"><br>\
+    <input name="hotel"class="form-control" placeholder="Hotel" type="text" required="true"><br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+        </form>
+
+
+    </div>
+  </div>
+{% endblock %}
